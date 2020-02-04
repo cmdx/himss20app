@@ -1,5 +1,9 @@
 FROM python:latest
 
+# for debugging
+RUN apt-get update
+RUN apt-get install -y iputils-tracepath curl vim
+
 COPY . /app/
 
 WORKDIR /app
