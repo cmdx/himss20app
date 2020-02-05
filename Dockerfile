@@ -4,6 +4,11 @@ FROM python:latest
 RUN apt-get update
 RUN apt-get install -y iputils-tracepath curl vim
 
+RUN groupadd -r moberg
+RUN useradd --no-log-init -r -g moberg moberg
+
+USER moberg
+
 COPY . /app/
 
 WORKDIR /app
