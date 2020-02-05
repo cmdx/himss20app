@@ -4,19 +4,21 @@ FROM python:latest
 RUN apt-get update
 RUN apt-get install -y iputils-tracepath curl vim
 
-RUN groupadd -r moberg
-RUN useradd --no-log-init -r -g moberg moberg
-
-USER moberg
+WORKDIR /app
 
 COPY . /app/
-
-WORKDIR /app
 
 RUN unzip data.zip
 
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
+
+RUN groupadd -r moberg
+RUN useradd --no-log-init -r -g moberg moberg
+
+RUN chown -R moberg:moberg /app
+
+USER moberg
 
 CMD [ "python", "demoServer.py" ]
