@@ -12,7 +12,7 @@ RUN unzip data.zip
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8000
+EXPOSE 8080
 
 RUN groupadd -r moberg
 RUN useradd --no-log-init -r -g moberg moberg
