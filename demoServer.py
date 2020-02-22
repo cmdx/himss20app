@@ -16,7 +16,7 @@ sending = False
 moFields = ["FacilityID", "PatientID", "Modality", "Location", "Date", "Time", "Value"]
 patientFields = ["name", "roomid", "roomnumber", "patientid"]
 initFields = ["hospname", "roomId", "room", "patientId", "patientname"]
-dataFile = "himss.demo.select.csv"
+dataFile = "himss.moberg.demo.csv"
 initFile = "moInitVals.csv"
 
 roomIds = []
